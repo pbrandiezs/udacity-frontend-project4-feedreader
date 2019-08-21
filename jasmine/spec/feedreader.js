@@ -84,6 +84,17 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        beforeEach(function(done) {
+            setTimeout(function() {
+                loadFeed(0);
+                done();
+            }, 4000);
+        });
+
+        it('loadFeed has at least a single .entry element', function(done) {
+            expect(document.getElementsByClassName("entry").length).not.toBe(0);
+            done();
+        });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
