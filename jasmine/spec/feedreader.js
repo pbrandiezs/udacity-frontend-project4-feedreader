@@ -104,5 +104,25 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-    })
+
+        it('new feed content actually changes', function(done) {
+            var oldContent,
+            newContent;
+            setTimeout(function() {
+                loadFeed(0, done);
+            },4000);
+            oldContent = document.getElementsByClassName("entry");
+            oldContent = oldContent[0].innerText;
+            console.log(oldContent);
+
+            setTimeout(function() {
+                loadFeed(1, done);
+            },4000);
+            newContent = document.getElementsByClassName("entry");
+            newContent = newContent[0].innerText;
+            console.log(newContent);
+            expect(oldContent).not.toEqual(newContent);
+            done();
+        });
+    });
 }());
