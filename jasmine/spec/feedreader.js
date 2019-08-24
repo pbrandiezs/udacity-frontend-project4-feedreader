@@ -121,8 +121,6 @@ $(function() {
         it('new feed content actually changes', function(done) {
             newContent = document.getElementsByClassName("entry");
             newContent = newContent[0].innerText;
-            console.log(newContent);
-            console.log(oldContent);
             expect(oldContent).not.toEqual(newContent);
             done();
         });
