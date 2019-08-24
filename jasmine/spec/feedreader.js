@@ -85,10 +85,8 @@ $(function() {
          */
 
         beforeEach(function(done) {
-            setTimeout(function() {
-                loadFeed(0);
-                done();
-            }, 4000);
+            loadFeed(0);
+            done();
         });
 
         it('loadFeed has at least a single .entry element', function(done) {
