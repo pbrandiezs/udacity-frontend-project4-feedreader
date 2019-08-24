@@ -105,22 +105,24 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-        it('new feed content actually changes', function(done) {
-            var oldContent,
+        var oldContent,
             newContent;
-            setTimeout(function() {
-                loadFeed(0, done);
-            },4000);
-            oldContent = document.getElementsByClassName("entry");
-            oldContent = oldContent[0].innerText;
-            console.log(oldContent);
 
-            setTimeout(function() {
-                loadFeed(1, done);
-            },4000);
+        beforeEach(function(done) {
+            loadFeed(0, function(){
+                oldContent = document.getElementsByClassName("entry");
+                oldContent = oldContent[0].innerText;
+                loadFeed(1, function(){
+                    done();
+                });
+            });
+        });
+
+        it('new feed content actually changes', function(done) {
             newContent = document.getElementsByClassName("entry");
             newContent = newContent[0].innerText;
             console.log(newContent);
+            console.log(oldContent);
             expect(oldContent).not.toEqual(newContent);
             done();
         });
