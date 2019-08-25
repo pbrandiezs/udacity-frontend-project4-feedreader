@@ -10,7 +10,7 @@ Udacity Front End Development Project 4 - Feed Reader Testing
 * This project is a demonstration of writing test-suites using Jasmine for a RSS Feed Reader program.  Initial starter code has been provided.  The project consists of modifying the Jasmine spec file - jasmine/spec/feedreader.js by writing appropriate test suites and test cases.
 
 ### Summary of third-party resources used:
-* Initial starter code provided by Udacity
+* Initial starter code provided by Udacity:
 https://github.com/udacity/frontend-nanodegree-feedreader
 * Jasmine documentation:
 https://jasmine.github.io/
@@ -18,4 +18,6 @@ https://jasmine.github.io/
 ### Hosting / Deployment
 * Copy the entire directory contents to the hosting server, including the css, fonts, jasmine, and js folders.  Direct your browser to index.html, scroll down to view the Jasmine test suite results.
 * The testing engine execution, in index.html, may be commented out once testing and validation is completed to only run the application.
+```
         <script src="jasmine/spec/feedreader.js"></script>
+```
