@@ -4,6 +4,12 @@
  * all of the tests that will be run against your application.
  */
 
+/*
+ * Updated by: Perry Brandiezs
+ * Date: 8/25/19
+*/
+
+
 /* We're placing all of our tests within the $() function,
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
@@ -22,7 +28,9 @@ $(function() {
          * page?
          */
         it('are defined', function() {
+            // test allFeeds are defined.
             expect(allFeeds).toBeDefined();
+            // test that the feeds exist.
             expect(allFeeds.length).not.toBe(0);
         });
 
@@ -33,7 +41,9 @@ $(function() {
          */
         it('each feed url is defined and url is not empty', function(){
             for (feed of allFeeds) {
+                // Test that feed url is defined.
                 expect(feed.url).toBeDefined();
+                // Test the feed url length is not 0.
                 expect(feed.url.length).not.toBe(0);
             };
         });
@@ -43,8 +53,11 @@ $(function() {
          * and that the name is not empty.
          */
         it('each feed name is defined and name is not empty', function(){
+            // Test each feed
             for (feed of allFeeds) {
+                // Test for the feed name to be defined.
                 expect(feed.name).toBeDefined();
+                // Test for the feed name length to not be 0.
                 expect(feed.name.length).not.toBe(0);
             };
         });
@@ -60,6 +73,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('menu is hidden by default', function(){
+            // Test for the menu to be hidden by default.
             expect(document.getElementsByTagName("BODY")[0].className).toBe("menu-hidden");
         });
          /* TODO: Write a test that ensures the menu changes
@@ -68,9 +82,13 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it('menu displays when clicked, and hides when clicked again', function(){
+            // Toggle the menu hidden.
             document.getElementsByTagName("BODY")[0].classList.toggle('menu-hidden');
+            // Test for the menu to not be hidden.
             expect(document.getElementsByTagName("BODY")[0].className).not.toBe("menu-hidden");
+            // Toggle menu hidden to again hide the menu.
             document.getElementsByTagName("BODY")[0].classList.toggle('menu-hidden');
+            // Test to confirm the menu is hidden.
             expect(document.getElementsByTagName("BODY")[0].className).toBe("menu-hidden");
         });
     });
@@ -84,12 +102,14 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        // load the initial feed.
         beforeEach(function(done) {
             loadFeed(0);
             done();
         });
 
         it('loadFeed has at least a single .entry element', function(done) {
+            // test to confirm at least a single entry does exist.
             expect(document.getElementsByClassName("entry").length).not.toBe(0);
             done();
         });
@@ -106,10 +126,14 @@ $(function() {
         var oldContent,
             newContent;
 
+        // Load initial feed, capture oldContent.
         beforeEach(function(done) {
+            // Load initial feed.
             loadFeed(0, function(){
+                // Capture old content to be used in comparison.
                 oldContent = document.getElementsByClassName("entry");
                 oldContent = oldContent[0].innerText;
+                // Load new content.
                 loadFeed(1, function(){
                     done();
                 });
@@ -117,8 +141,10 @@ $(function() {
         });
 
         it('new feed content actually changes', function(done) {
+            // Capture new content for comparison.
             newContent = document.getElementsByClassName("entry");
             newContent = newContent[0].innerText;
+            // Test to confirm content has changed.
             expect(oldContent).not.toEqual(newContent);
             done();
         });
