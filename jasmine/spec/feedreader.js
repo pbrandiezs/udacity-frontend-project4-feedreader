@@ -6,7 +6,8 @@
 
 /*
  * Updated by: Perry Brandiezs
- * Date: 8/25/19
+ * Date: August 25, 2019
+ * Last Updated: August 26, 2019
 */
 
 /*jshint esversion: 6 */

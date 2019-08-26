@@ -5,6 +5,7 @@ Udacity Front End Development Project 4 - Feed Reader Testing
 # Programs: index.html, css/style.css, css/icomoon.css, normalize.css, js/app.js, jasmine/spec/feedreader.js
 * Author: Perry Brandiezs
 * Date: August 25, 2019
+* Last Updated: August 26, 2019
 
 ### Overview
 * This project is a demonstration of writing test-suites using Jasmine for a RSS Feed Reader program.  Initial starter code has been provided.  The project consists of modifying the Jasmine spec file - jasmine/spec/feedreader.js by writing appropriate test suites and test cases.
