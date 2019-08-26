@@ -112,9 +112,9 @@ $(function() {
         });
 
         it("loadFeed has at least a single .entry element", function(done) {
-            // test to confirm at least a single entry does exist.
-            expect(document.getElementsByClassName("entry").length).not.toBe(0);
-            done();
+            // test to confirm at least a single .entry does exist within .feed.
+           expect(document.querySelectorAll(".feed .entry").length).not.toBe(0);
+           done();
         });
     });
 
