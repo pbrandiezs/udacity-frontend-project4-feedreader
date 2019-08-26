@@ -90,7 +90,7 @@ $(function() {
             expect(document.getElementsByTagName("BODY")[0]
                 .className).not.toBe("menu-hidden");
             // Click the menu again to be hidden
-                document.getElementsByClassName("menu-icon-link")[0].click();
+            document.getElementsByClassName("menu-icon-link")[0].click();
             expect(document.getElementsByTagName("BODY")[0]
                 .className).toBe("menu-hidden");
         });
