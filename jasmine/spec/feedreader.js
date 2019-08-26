@@ -85,16 +85,12 @@ $(function() {
           */
         it("menu displays when clicked, and hides when clicked again",
             function(){
-            // Toggle the menu hidden.
-            document.getElementsByTagName("BODY")[0]
-                .classList.toggle("menu-hidden");
-            // Test for the menu to not be hidden.
+            // Click the menu to show (not hidden)
+            document.getElementsByClassName("menu-icon-link")[0].click();
             expect(document.getElementsByTagName("BODY")[0]
                 .className).not.toBe("menu-hidden");
-            // Toggle menu hidden to again hide the menu.
-            document.getElementsByTagName("BODY")[0]
-                .classList.toggle("menu-hidden");
-            // Test to confirm the menu is hidden.
+            // Click the menu again to be hidden
+                document.getElementsByClassName("menu-icon-link")[0].click();
             expect(document.getElementsByTagName("BODY")[0]
                 .className).toBe("menu-hidden");
         });
